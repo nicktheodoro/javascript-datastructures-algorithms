@@ -1,4 +1,4 @@
-//* ****** EcmaScript 2015 (ES6): Template literals (https://goo.gl/4N36CS)
+// EcmaScript 2015 (ES6): Template literals
 const book = {
   name: 'Learning JavaScript DataStructures and Algorithms'
 };

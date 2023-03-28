@@ -1,16 +1,16 @@
-//* ****** EcmaScript 2015 (ES6): let and const keywords
+// EcmaScript 2015 (ES6): let and const keywords
 
-//* ****** EcmaScript 2015 (ES6): let is the new var (https://goo.gl/he0udZ)
+// EcmaScript 2015 (ES6): let is the new var
 var framework = 'Angular';
 var framework = 'React';
 console.log(framework);
 
-let language = 'JavaScript!'; // {1}
-// let language = 'Ruby!'; // {2} - throws error
+let language = 'JavaScript!';
+// let language = 'Ruby!'; // throws error
 console.log(language);
 
 
-//* ****** EcmaScript 2015 (ES6): const (https://goo.gl/YUQj3r)
+// EcmaScript 2015 (ES6): const
 const PI = 3.141593;
 // PI = 3.0; //throws error
 console.log(PI);

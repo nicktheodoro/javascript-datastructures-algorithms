@@ -1,4 +1,4 @@
-//* ****** EcmaScript 2015 (ES6): arrow functions (https://goo.gl/nM414v)
+// EcmaScript 2015 (ES6): arrow functions
 var circleAreaES5 = function circleArea(r) {
   var PI = 3.14;
   var area = PI * r * r;

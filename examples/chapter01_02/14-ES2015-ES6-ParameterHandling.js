@@ -1,4 +1,4 @@
-//* ****** EcmaScript 2015 (ES6): Default Parameter Values (https://goo.gl/AP5EYb)
+// EcmaScript 2015 (ES6): Default Parameter Values
 function sum(x = 1, y = 2, z = 3) {
   return x + y + z;
 }
@@ -23,7 +23,7 @@ function sum3() {
 }
 console.log(sum3(4, 2)); // outputs 9
 
-//* ****** EcmaScript 6: spread operator ('...') (https://goo.gl/8equk5)
+// EcmaScript 6: spread operator ('...')
 let params = [3, 4, 5];
 console.log(sum(...params)); // ES2015
 console.log(sum.apply(undefined, params)); // ES5
@@ -31,7 +31,7 @@ console.log(sum.apply(undefined, params)); // ES5
 let numbers = [1, 2, ...params]; // pushing values into array
 console.log(numbers);
 
-//* ****** EcmaScript 6: rest parameter ('...') (https://goo.gl/LaJZqU)
+// EcmaScript 6: rest parameter ('...')
 function restParamaterFunction(x, y, ...a) {
   return (x + y) * a.length;
 }
