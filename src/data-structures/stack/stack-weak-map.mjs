@@ -1,39 +1,68 @@
 const _items = new WeakMap();
+const _count = new WeakMap();
 
 export default class StackWeakMap {
   constructor() {
-    _items.set(this, [])
+    _count.set(this, 0);
+    _items.set(this, {});
   }
 
   push(element) {
-    _items.get(this).push(element);
+    const items = _items.get(this);
+    const count = _count.get(this);
+    items[count] = element;
+    _count.set(this, count + 1);
   }
 
   pop() {
-    return _items.get(this).pop();
+    if (this.isEmpty()) {
+      return undefined;
+    }
+    const items = _items.get(this);
+    let count = _count.get(this);
+    count--;
+    _count.set(this, count);
+    const result = items[count];
+    delete items[count];
+    return result;
   }
 
   peek() {
-    return _items.get(this)[_items.get(this).length - 1];
+    if (this.isEmpty()) {
+      return undefined;
+    }
+    const items = _items.get(this);
+    const count = _count.get(this);
+    return items[count - 1];
   }
 
   isEmpty() {
-    return _items.get(this).length === 0;
+    return _count.get(this) === 0;
   }
 
   size() {
-    return _items.get(this).length;
+    return _count.get(this);
   }
 
   clear() {
-    _items.get(this) = [];
+    _count.set(this, 0);
+    _items.set(this, {});
   }
 
-  toArray() {
-    return _items.get(this);
+  print() {
+    console.log(this.toString());
   }
 
   toString() {
-    return _items.get(this).toString();
+    if (this.isEmpty()) {
+      return '';
+    }
+    const items = _items.get(this);
+    const count = _count.get(this);
+    let objString = `${items[0]}`;
+    for (let i = 1; i < count; i++) {
+      objString = `${objString},${items[i]}`;
+    }
+    return objString;
   }
 }

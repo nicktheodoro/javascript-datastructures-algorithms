@@ -29,8 +29,8 @@ export default class StackArray {
     this[_items] = [];
   }
 
-  toArray() {
-    return this[_items];
+  print() {
+    console.log(this.toString());
   }
 
   toString() {
